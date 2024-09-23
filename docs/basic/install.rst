@@ -10,13 +10,13 @@ This part of the documentation covers the installation of Authlib, just
 like any other software package needs to be installed first.
 
 
-$ pip install Authlib
+$ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib
 ---------------------
 
 
 Installing Authlib is simple with `pip <http://www.pip-installer.org/>`_::
 
-    $ pip install Authlib
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib
 
 It will also install the dependencies:
 
@@ -28,30 +28,30 @@ It will also install the dependencies:
 
 Using Authlib with requests::
 
-    $ pip install Authlib requests
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib requests
 
 Using Authlib with httpx::
 
-    $ pip install Authlib httpx
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib httpx
 
 Using Authlib with Flask::
 
-    $ pip install Authlib Flask
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib Flask
 
 Using Authlib with Django::
 
-    $ pip install Authlib Django
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib Django
 
 Using Authlib with Starlette::
 
-    $ pip install Authlib httpx Starlette
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib httpx Starlette
 
 .. versionchanged:: v0.12
 
     "requests" is an optional dependency since v0.12. If you want to use
     Authlib client, you have to install "requests" by yourself::
 
-    $ pip install Authlib requests
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' Authlib requests
 
 Get the Source Code
 -------------------
@@ -76,4 +76,4 @@ Once you have a copy of the source, you can embed it in your Python package,
 or install it into your site-packages easily::
 
     $ cd authlib
-    $ pip install .
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' .

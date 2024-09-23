@@ -179,7 +179,7 @@ it is also possible to use signal to listen for token updating.
 
 Before using signal, make sure you have installed **blinker** library::
 
-    $ pip install blinker
+    $ pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' blinker
 
 Connect the ``token_update`` signal::
 
