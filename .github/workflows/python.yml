@@ -48,7 +48,7 @@ jobs:
       env:
         TOXENV: ${{ matrix.python.toxenv }}
       run: |
-        python -m pip install --index-url pip==23.0.1
+        python -m pip install pip==23.0.1
         tox
 
     - name: Report coverage
