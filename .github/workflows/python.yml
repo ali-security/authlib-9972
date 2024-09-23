@@ -39,7 +39,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+        python -m pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' pip
         pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' setuptools
         pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' tox
         pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' -r requirements-test.txt
@@ -48,7 +48,7 @@ jobs:
       env:
         TOXENV: ${{ matrix.python.toxenv }}
       run: |
-        python -m pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' --upgrade pip
+        pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' pip
         tox
 
     - name: Report coverage
