@@ -6,6 +6,14 @@ from authlib.jose import JsonWebEncryption
 from authlib.common.encoding import urlsafe_b64encode
 from tests.util import read_file_path
 
+unsafe_keys = [
+    "-----BEGIN UNSAFE",
+    "---- BEGIN UNSAFE",
+    "ssh-rsa UNSAFE",
+    "ssh-dss UNSAFE",
+    "ssh-ed25519 UNSAFE",
+    "ecdsa-sha2-UNSAFE",
+]
 
 class JWETest(unittest.TestCase):
     def test_not_enough_segments(self):
@@ -238,6 +246,11 @@ class JWETest(unittest.TestCase):
             protected, b'hello', key
         )
 
+    def test_import_unsafe_key():
+        for unsafe_key in unsafe_keys:
+            with pytest.raises(ValueError, match="This key may not be safe to import"):
+                OctKey.import_key(unsafe_key)
+
     def test_dir_alg(self):
         jwe = JsonWebEncryption()
         key = OctKey.generate_key(128, is_private=True)
@@ -254,6 +267,8 @@ class JWETest(unittest.TestCase):
             jwe.serialize_compact,
             protected, b'hello', key2
         )
+
+    
 
     def test_dir_alg_c20p(self):
         jwe = JsonWebEncryption()
