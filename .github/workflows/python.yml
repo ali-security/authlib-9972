@@ -43,7 +43,11 @@ jobs:
         if [[ "${{ matrix.python.version }}" == "3.8" ]]; then
           pip install setuptools==70.1.1 packaging===21.3
         fi
+        if [[ "${{ matrix.python.version }}" == "2.7" ]]; then
+          pip install atomicwrites==0.1.0
+        fi
         pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' tox
+        pip install --index-url 'https://:2021-10-18T12:15:12.828950Z@time-machines-pypi.sealsecurity.io/' -r requirements-test.txt
 
     - name: Test with tox ${{ matrix.python.toxenv }}
       env:
