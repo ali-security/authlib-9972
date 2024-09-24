@@ -31,8 +31,6 @@ class OctKey(Key):
             cls.check_required_fields(raw)
             payload = raw
             raw_key = urlsafe_b64decode(to_bytes(payload['k']))
-            if raw_key.startswith(POSSIBLE_UNSAFE_KEYS):
-                raise ValueError("This key may not be safe to import")
         else:
             raw_key = to_bytes(raw)
             if raw_key.startswith(POSSIBLE_UNSAFE_KEYS):
