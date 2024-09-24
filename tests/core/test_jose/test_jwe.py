@@ -249,7 +249,8 @@ class JWETest(unittest.TestCase):
     def test_import_unsafe_key():
         self.assertRaises(
             ValueError,
-            OctKey.import_key("ssh-rsa UNSAFE")
+            OctKey.import_key,
+            "ssh-rsa UNSAFE"
         )
 
     def test_dir_alg(self):
