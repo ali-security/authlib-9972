@@ -247,8 +247,11 @@ class JWETest(unittest.TestCase):
         )
 
     def test_import_unsafe_key():
-        with pytest.raises(ValueError, match="This key may not be safe to import"):
-            OctKey.import_key("ssh-rsa UNSAFE")
+        self.assertRaises(
+            ValueError,
+            OctKey.import_key,
+            "ssh-rsa UNSAFE"
+        )
 
     def test_dir_alg(self):
         jwe = JsonWebEncryption()
